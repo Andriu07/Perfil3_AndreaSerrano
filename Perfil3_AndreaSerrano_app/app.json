@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "Perfil3",
+    "slug": "perfil3-andreaserrano",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/master-ball-pokemon-icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.andreaserrano.perfil3",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/master-ball-pokemon-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./assets/master-ball-pokemon-icon.png"
+    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/master-ball-pokemon-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#2B1B4F"
+        }
+      ]
+    ]
+  }
+}

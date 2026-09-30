@@ -1,26 +1,16 @@
 import React from 'react';
-import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
-import { colors } from '../theme/colors';
+import { View, ActivityIndicator, Text, StyleSheet } from 'react-native';
 
-export default function Loader({ mensaje = 'Cargando...' }) {
+export default function Loader() {
   return (
     <View style={styles.centro}>
-      <ActivityIndicator size="large" color={colors.primaryLight} />
-      <Text style={styles.mensaje}>{mensaje}</Text>
+      <ActivityIndicator size="large" color="#5B3E96" />
+      <Text style={styles.texto}>Cargando...</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  centro: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 24,
-  },
-  mensaje: {
-    marginTop: 12,
-    fontSize: 15,
-    color: colors.textMuted,
-  },
+  centro: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+  texto: { marginTop: 10, color: '#666' },
 });

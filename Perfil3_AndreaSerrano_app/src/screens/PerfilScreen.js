@@ -1,72 +1,25 @@
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import Card from '../components/Card';
-import Avatar from '../components/Avatar';
-import InfoRow from '../components/InfoRow';
 import Button from '../components/Button';
-import useStudent from '../hooks/useStudent';
-import { colors } from '../theme/colors';
 
 export default function PerfilScreen({ navigation }) {
-  const { estudiante, iniciales, datos } = useStudent();
-
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <View style={styles.container}>
       <Card>
-        <View style={styles.header}>
-          <Avatar texto={iniciales} />
-          <Text style={styles.nombre}>{estudiante.nombre}</Text>
-          <Text style={styles.subtitulo}>Estudiante</Text>
-        </View>
-
-        <View style={styles.body}>
-          {datos.map((dato, i) => (
-            <InfoRow
-              key={dato.etiqueta}
-              etiqueta={dato.etiqueta}
-              valor={dato.valor}
-              ultima={i === datos.length - 1}
-            />
-          ))}
-        </View>
+        <Text style={styles.titulo}>Datos del Estudiante</Text>
+        <Text style={styles.dato}>Nombre: Andrea Serrano</Text>
+        <Text style={styles.dato}>Carnet: 20240349</Text>
+        <Text style={styles.dato}>Sección y Grupo: 1B</Text>
       </Card>
 
-      <Button
-        titulo="Ver personajes  →"
-        onPress={() => navigation.navigate('Listado')}
-        style={styles.boton}
-      />
-    </ScrollView>
+      <Button titulo="Ver personajes" onPress={() => navigation.navigate('Listado')} />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flexGrow: 1,
-    justifyContent: 'center',
-    padding: 24,
-  },
-  header: {
-    backgroundColor: colors.primary,
-    alignItems: 'center',
-    paddingVertical: 32,
-  },
-  nombre: {
-    color: colors.white,
-    fontSize: 22,
-    fontWeight: '700',
-    marginTop: 14,
-  },
-  subtitulo: {
-    color: '#CFC6E8',
-    fontSize: 14,
-    marginTop: 4,
-  },
-  body: {
-    paddingHorizontal: 22,
-    paddingVertical: 8,
-  },
-  boton: {
-    marginTop: 28,
-  },
+  container: { flex: 1, justifyContent: 'center', padding: 24, backgroundColor: '#F3F0FA' },
+  titulo: { fontSize: 20, fontWeight: 'bold', color: '#2B1B4F', marginBottom: 12 },
+  dato: { fontSize: 16, marginBottom: 6, color: '#333' },
 });

@@ -1,14 +1,9 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
-import { colors } from '../theme/colors';
 
-export default function Button({ titulo, onPress, color = colors.accent, style }) {
+export default function Button({ titulo, onPress }) {
   return (
-    <TouchableOpacity
-      style={[styles.boton, { backgroundColor: color, shadowColor: color }, style]}
-      activeOpacity={0.85}
-      onPress={onPress}
-    >
+    <TouchableOpacity style={styles.boton} onPress={onPress}>
       <Text style={styles.texto}>{titulo}</Text>
     </TouchableOpacity>
   );
@@ -16,19 +11,11 @@ export default function Button({ titulo, onPress, color = colors.accent, style }
 
 const styles = StyleSheet.create({
   boton: {
-    paddingVertical: 16,
-    paddingHorizontal: 28,
-    borderRadius: 16,
+    marginTop: 24,
+    backgroundColor: '#D6336C',
+    padding: 14,
+    borderRadius: 12,
     alignItems: 'center',
-    shadowOpacity: 0.35,
-    shadowRadius: 10,
-    shadowOffset: { width: 0, height: 6 },
-    elevation: 4,
   },
-  texto: {
-    color: colors.white,
-    fontSize: 17,
-    fontWeight: '700',
-    letterSpacing: 0.3,
-  },
+  texto: { color: '#fff', fontSize: 16, fontWeight: 'bold' },
 });
